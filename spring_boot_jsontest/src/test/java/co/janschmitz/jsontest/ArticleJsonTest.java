@@ -18,8 +18,8 @@ public class ArticleJsonTest {
         Isbn isbn = Isbn.of("978-3-86490-525-4");
         var article = new Article("Spring Boot 2", Ean.of("9783864905254"));
 
-        assertThat(json.write(article)).extractingJsonPathValue("@.name").isEqualTo("Spring Boot 2");
-        assertThat(json.write(article)).extractingJsonPathValue("@.ean").isEqualTo("9783864905254");
+        assertThat(json.write(article)).extractingJsonPathValue("$.name").isEqualTo("Spring Boot 2");
+        assertThat(json.write(article)).extractingJsonPathValue("$.ean").isEqualTo("9783864905254");
     }
 
     @Test

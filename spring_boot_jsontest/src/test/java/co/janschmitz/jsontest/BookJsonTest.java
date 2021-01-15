@@ -17,9 +17,9 @@ public class BookJsonTest {
     public void testSerialization() throws Exception {
         var book = new Book("Spring Boot 2", "Michael Simons", Isbn.of("978-3-86490-525-4"));
 
-        assertThat(json.write(book)).extractingJsonPathValue("@.title").isEqualTo("Spring Boot 2");
-        assertThat(json.write(book)).extractingJsonPathValue("@.author").isEqualTo("Michael Simons");
-        assertThat(json.write(book)).extractingJsonPathValue("@.isbn").isEqualTo("978-3-86490-525-4");
+        assertThat(json.write(book)).extractingJsonPathValue("$.title").isEqualTo("Spring Boot 2");
+        assertThat(json.write(book)).extractingJsonPathValue("$.author").isEqualTo("Michael Simons");
+        assertThat(json.write(book)).extractingJsonPathValue("$.isbn").isEqualTo("978-3-86490-525-4");
     }
 
     @Test
