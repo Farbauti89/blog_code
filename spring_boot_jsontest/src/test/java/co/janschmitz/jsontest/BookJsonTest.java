@@ -15,20 +15,26 @@ public class BookJsonTest {
 
     @Test
     public void testSerialization() throws Exception {
-        var book = new Book("Spring Boot 2", "Michael Simons", Isbn.of("978-3-86490-525-4"));
+        var book = new Book("Spring Boot 2", "Michael Simons", "978-3-86490-525-4");
+        var expectedJson = "{\"title\":\"Spring Boot 2\",\"author\":\"Michael Simons\",\"isbn\":\"978-3-86490-525-4\"}";
 
-        assertThat(json.write(book)).extractingJsonPathValue("$.title").isEqualTo("Spring Boot 2");
-        assertThat(json.write(book)).extractingJsonPathValue("$.author").isEqualTo("Michael Simons");
-        assertThat(json.write(book)).extractingJsonPathValue("$.isbn").isEqualTo("978-3-86490-525-4");
+        assertThat(json.write(book)).isEqualToJson(expectedJson);
+    }
+
+    @Test
+    public void testSerializationWithSingleFields() throws Exception {
+        var book = new Book("Spring Boot 2", "Michael Simons", "978-3-86490-525-4");
+
+        assertThat(json.write(book)).hasJsonPathValue("$.title", "Spring Boot 2");
+        assertThat(json.write(book)).hasJsonPathValue("$.author", "Michael Simons");
+        assertThat(json.write(book)).hasJsonPathValue("$.isbn", "978-3-86490-525-4");
     }
 
     @Test
     public void testDeserialization() throws Exception {
         var jsonValue = "{\"title\":\"Spring Boot 2\",\"author\":\"Michael Simons\",\"isbn\":\"978-3-86490-525-4\"}";
-        var book = json.parse(jsonValue).getObject();
+        var expectedBook = new Book("Spring Boot 2", "Michael Simons", "978-3-86490-525-4");
 
-        assertThat(book.getTitle()).isEqualTo("Spring Boot 2");
-        assertThat(book.getAuthor()).isEqualTo("Michael Simons");
-        assertThat(book.getIsbn().getValue()).isEqualTo("978-3-86490-525-4");
+        assertThat(json.parse(jsonValue)).usingRecursiveComparison().isEqualTo(expectedBook);
     }
 }

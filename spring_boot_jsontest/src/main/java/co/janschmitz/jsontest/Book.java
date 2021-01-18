@@ -1,18 +1,12 @@
 package co.janschmitz.jsontest;
 
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
-
 public class Book {
 
     private String title;
     private String author;
-    @JsonUnwrapped
-    private Isbn isbn;
+    private String isbn;
 
-    private Book() {
-    }
-
-    public Book(String title, String author, Isbn isbn) {
+    public Book(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
@@ -34,11 +28,11 @@ public class Book {
         this.author = author;
     }
 
-    public Isbn getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(Isbn isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 }
