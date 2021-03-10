@@ -1,4 +1,4 @@
-package co.janschmitz.jsontest;
+package dev.jschmitz.jsontest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

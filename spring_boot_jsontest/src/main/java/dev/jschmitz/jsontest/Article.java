@@ -1,4 +1,4 @@
-package co.janschmitz.jsontest;
+package dev.jschmitz.jsontest;
 
 public class Article {
 
