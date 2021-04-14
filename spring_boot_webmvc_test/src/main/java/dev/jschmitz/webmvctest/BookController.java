@@ -23,7 +23,7 @@ public class BookController {
     }
 
     @GetMapping(path = "/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Book> findAllByIsbn(@PathVariable String isbn) {
+    public ResponseEntity<Book> findByIsbn(@PathVariable String isbn) {
         var bookOptional = bookRepository.findByIsbn(isbn);
         if (bookOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
