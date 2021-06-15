@@ -23,14 +23,15 @@ public class Restaurant {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "restaurant")
     private Set<Rating> ratings;
 
-    protected Restaurant(){}
+    protected Restaurant() {
+    }
 
     public Restaurant(String name) {
         this.name = name;
         ratings = new HashSet<>();
     }
 
-    public void rate(Integer score){
+    public void rate(Integer score) {
         var rating = new Rating(score, this);
         ratings.add(rating);
     }

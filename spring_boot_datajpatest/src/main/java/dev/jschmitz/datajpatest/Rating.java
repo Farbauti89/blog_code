@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name= "rating")
+@Table(name = "rating")
 public class Rating {
 
     @Id
@@ -20,9 +20,10 @@ public class Rating {
 
     private Integer score;
 
-    protected Rating(){}
+    protected Rating() {
+    }
 
-    Rating(Integer score, Restaurant restaurant){
+    Rating(Integer score, Restaurant restaurant) {
         this.score = score;
         this.restaurant = restaurant;
     }
