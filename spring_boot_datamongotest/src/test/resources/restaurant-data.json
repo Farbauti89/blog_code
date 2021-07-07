@@ -1,0 +1,10 @@
+[
+  {
+    "_class": "dev.jschmitz.datamongotest.Restaurant",
+    "name": "Java Café",
+    "location": {
+      "latitude": "52.52439",
+      "longitude": "13.41043"
+    }
+  }
+]
