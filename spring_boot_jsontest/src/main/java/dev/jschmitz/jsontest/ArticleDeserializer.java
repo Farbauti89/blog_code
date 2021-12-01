@@ -19,6 +19,6 @@ public class ArticleDeserializer extends JsonDeserializer<Article> {
         String articleName = node.get("name").asText();
         String ean = node.get("ean").asText();
 
-        return new Article(articleName, Ean.of(ean));
+        return new Article(articleName, new Ean(ean));
     }
 }

@@ -27,6 +27,6 @@ public class StarWarsCharacterRepository {
             return Optional.empty();
         }
 
-        return Optional.of(response.getBody());
+        return Optional.ofNullable(response.getBody());
     }
 }

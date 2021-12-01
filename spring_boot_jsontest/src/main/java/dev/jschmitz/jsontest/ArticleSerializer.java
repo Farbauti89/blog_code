@@ -14,7 +14,7 @@ public class ArticleSerializer extends JsonSerializer<Article> {
     public void serialize(Article article, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         jsonGenerator.writeStartObject();
         jsonGenerator.writeStringField("name", article.getName());
-        jsonGenerator.writeStringField("ean", article.getEan().getValue());
+        jsonGenerator.writeStringField("ean", article.getEan().value());
         jsonGenerator.writeEndObject();
     }
 }

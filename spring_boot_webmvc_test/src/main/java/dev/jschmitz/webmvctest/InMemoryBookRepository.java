@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class InMemoryBookRepository implements BookRepository {
 
-    private List<Book> books = List.of(
+    private final List<Book> books = List.of(
             new Book("Spring Boot 2", "Michael Simons", "978-3-86490-525-4")
             , new Book("Langlebige Software-Architekturen", "Carola Lilienthal", "978-3-86490-729-6")
     );

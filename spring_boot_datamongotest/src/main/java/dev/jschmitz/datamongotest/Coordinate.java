@@ -11,14 +11,4 @@ public record Coordinate(double latitude, double longitude) {
             throw new IllegalArgumentException("Latitude must be between -180 and 180.");
         }
     }
-
-    @Override
-    public double latitude() {
-        return latitude;
-    }
-
-    @Override
-    public double longitude() {
-        return longitude;
-    }
 }

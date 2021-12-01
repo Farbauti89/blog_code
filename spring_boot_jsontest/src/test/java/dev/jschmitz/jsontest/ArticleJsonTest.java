@@ -15,7 +15,7 @@ public class ArticleJsonTest {
 
     @Test
     public void testSerialization() throws Exception {
-        var article = new Article("Spring Boot 2", Ean.of("9783864905254"));
+        var article = new Article("Spring Boot 2", new Ean("9783864905254"));
 
         assertThat(json.write(article)).extractingJsonPathValue("$.name").isEqualTo("Spring Boot 2");
         assertThat(json.write(article)).extractingJsonPathValue("$.ean").isEqualTo("9783864905254");
@@ -24,7 +24,7 @@ public class ArticleJsonTest {
     @Test
     public void testDeserialization() throws Exception {
         var jsonValue = "{\"name\":\"Spring Boot 2\",\"ean\":\"9783864905254\"}";
-        var article = new Article("Spring Boot 2", Ean.of("9783864905254"));
+        var article = new Article("Spring Boot 2", new Ean("9783864905254"));
 
         assertThat(json.parse(jsonValue)).usingRecursiveComparison().isEqualTo(article);
     }
