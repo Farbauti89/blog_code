@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:js="http://jschmitz.dev/spring-boot-webserviceservertest/webservice/model"
+           targetNamespace="http://jschmitz.dev/spring-boot-webserviceservertest/webservice/model" elementFormDefault="qualified">
+
+    <xs:element name="getBooksRequest" />
+    <xs:element name="getBooksResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="books" type="js:book" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBookRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isbn" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBookResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="book" type="js:book"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="book">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="isbn" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
