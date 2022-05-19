@@ -14,7 +14,8 @@ public class StarWarsCharacterRepository {
 
     private final RestTemplate restTemplate;
 
-    public StarWarsCharacterRepository(RestTemplateBuilder restTemplateBuilder, @Value("${swapi.baseUrl}") String baseUrl) {
+    public StarWarsCharacterRepository(RestTemplateBuilder restTemplateBuilder,
+                                       @Value("${swapi.baseUrl}") String baseUrl) {
         this.restTemplate = restTemplateBuilder.rootUri(baseUrl).build();
     }
 
