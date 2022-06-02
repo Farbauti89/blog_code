@@ -54,7 +54,7 @@ class CharacterControllerIT {
     @Test
     void requestingAnUnknownCharacter_Returns404() throws Exception {
         mockServerClient
-                .when(request().withPath("/people/1337"))
+                .when(request().withPath("/people/1"))
                 .respond(response().withStatusCode(HttpStatusCode.NOT_FOUND_404.code()));
 
         mockMvc.perform(get("/characters/1").contentType(MediaType.APPLICATION_JSON_VALUE))
