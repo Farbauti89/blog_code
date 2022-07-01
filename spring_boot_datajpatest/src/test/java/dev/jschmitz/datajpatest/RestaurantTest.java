@@ -26,8 +26,8 @@ public class RestaurantTest {
     @Test
     @Sql("/fixture/restaurantTest_topRatedRestaurant.sql")
     void restaurantsWithAnAverageRatingOfEight_AreTopRatedRestaurants() {
-        List<Restaurant> topRestaurants = restaurantRepository.findTopRatedRestaurants();
-        assertEquals(2, topRestaurants.size());
+        List<Restaurant> topRestaurants = restaurantRepository.findTopRatedRestaurantsByName("Spring");
+        assertEquals(1, topRestaurants.size());
     }
 
     @Test
