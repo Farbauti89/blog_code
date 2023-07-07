@@ -3,9 +3,11 @@ package dev.jschmitz.mockftpserver.processing;
 import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.util.UUID;
-import javax.xml.parsers.DocumentBuilder;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import jakarta.xml.parsers.DocumentBuilder;
+import jakarta.xml.parsers.DocumentBuilderFactory;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
